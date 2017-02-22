@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<title>booklook</title>
+</head>
+<body>
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="page-header">
+        <h1>BookLook <i class="fa fa-eye" aria-hidden="true"></i></h1>
+      </div>
+
+      <div class="display"></div>
+      <div class="displayInfo"></div>
+
+      <form class="isbn-form">
+        <h3>Search by ISBN</h3>
+
+        <div class="form-group">
+          <input type="text" id="isbn" class="form-control" placeholder="ISBN Number"/>
+        </div>
+
+        <button class="btn btn-primary search-isbn" type="button">Search</button>
+      </form>
+
+      
+    </div>
+  </div>
+
+  <script id="store-template" type="text/x-handlebars-template">
+    {{#each items}}
+    <ul>{{volumeInfo.title}}</ul>
+    <button class="btn btn-primary moreInfo" type="button">...more</button>
+<!--     <br><h3>{{volumeInfo.authors}}</h3>
+    <br><p>{{volumeInfo.description}}</p>
+    <img src='{{volumeInfo.imageLinks.smallThumbnail}}'/>" -->
+    {{/each}}
+  </script>
+
+    <script id="store-info" type="text/x-handlebars-template">
+    {{#each items}}
+	<br><h3>{{volumeInfo.authors}}</h3>
+    <br><p>{{volumeInfo.description}}</p>
+    <img src='{{volumeInfo.imageLinks.smallThumbnail}}'/>"
+    {{/each}}
+  	</script>
+  	
+  <script src="node_modules/jquery/dist/jquery.min.js"> </script>
+  <script src="node_modules/handlebars/dist/handlebars.min.js"> </script>
+  <script src="script.js"></script>
+
+</body>
+</html>
